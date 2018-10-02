@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+  //로그인 버튼 이벤트
   $(".login_btn").on("click",function(){
     $(".login_box").css({"display":"block"})
 
@@ -7,6 +9,32 @@ $(document).ready(function(){
 
     $(".login_box").css({"display":"none"})
   })
+  //로그인 box 보이기 안보이기
+
+  //로기인 box signup join 이벤트
+  $("#selector_login").click(function(){
+    $(this).css({"border-bottom":"3px solid #1b2d43"})
+    $("#selector_join").css({"border-bottom":"none"})
+    $(".select_login").css({"display":"block"})
+    $(".select_join").css({"display":"none"})
+
+
+
+
+    })
+    $("#selector_join").click(function(){
+      $(this).css({"border-bottom":"3px solid #1b2d43"})
+      $("#selector_login").css({"border-bottom":"none"})
+      $(".select_login").css({"display":"none"})
+      $(".select_join").css({"display":"block"})
+
+
+      })
+
+
+
+
+
 
 
   $("#team_ul").on("click",function(){
@@ -36,4 +64,6 @@ $("#hamber_close").on("click",function(){
     $("#hamber_close").css({"display":"none"});
     $("#hamber_open").css({"display":"block"});
 });
+
+
 })

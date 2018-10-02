@@ -2,6 +2,23 @@
 include_once $_SERVER['DOCUMENT_ROOT']."/inc/conn.inc";
 
 $conn = getConnection();
+session_start();
+
+$m_id = $_SESSION['m_id'];
+if (!$m_id) {
+
+    echo "
+    <script type='text/javascript'>
+    alert('로그인이 필요한 서비스 입니다.');
+    location.href = 'index.php';
+    </script>";
+
+}
+
+$info_sql = "SELECT * FROM member_tb WHERE m_id = '$m_id'";
+$info_query = mysqli_query($conn, $info_sql);
+$info_array = mysqli_fetch_array($info_query);
+
 
 ?>
 <!DOCTYPE html>
@@ -44,10 +61,47 @@ $conn = getConnection();
         <?php echo $_SESSION['m_id']; ?>
       </div>
 
+      <div class="logout_box">
+        <div class="logout_team_logo">
+d
+        </div>
+        <div class="logout_team_info">
+          <h1><?php echo $_SESSION['m_id']; ?></h1>
+          <p>팀대표자 : <?php echo $_SESSION['m_id']; ?> </p>
+
+        </div>
+
+        <div class="logout_logout">
+
+          로그아웃하시겠습니까?
+          <div class="logout_logout_yes">
+            yes
+          </div>
+          <div class="logout_logout_no">
+            no
+          </div>
+        </div>
+        <script type="text/javascript">
+        $(".head_login").click(function(){
+          $(".logout_box").show()
+        })
+        $(".logout_logout_no").click(function(){
+          $(".logout_box").css({"display":"none"})
+
+        })
+
+        </script>
+
+
+
+
+      </div>
+
     </div>
     <div class="page1_article">
       <div class="nav">
         <div class="nav_team_logo_box">
+          <img src="<?php echo $info_array['m_image']; ?>">
         </div>
         <p>WELCOME</p>
         <h1>TEAM NAME(php처리)</h1>

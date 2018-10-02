@@ -21,12 +21,22 @@ if ($check_result) {
 		$_SESSION['m_pw'] = $m_pw;
 
 
-		echo "
+		// echo "
+		// <script type='text/javascript'>
+		// alert('$m_id님 어서오세요!');
+		// location.href = 'index.php';
+		// </script>
+		// ";
+
+		?>
+
 		<script type='text/javascript'>
-		alert('로그인성공.');
+		alert('<?php echo($m_id.'님 어서오세요!') ?>');
 		location.href = 'index.php';
 		</script>
-		";
+
+
+		<?php
 
 	}else{
 		//비밀번호가 일치하지 않다면

@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+
+$m_id = $_SESSION['m_id'];
+if (!$m_id) {
+
+    echo "
+    <script type='text/javascript'>
+    alert('로그인이 필요한 서비스 입니다.');
+    location.href = 'index.php';
+    </script>";
+
+}
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
