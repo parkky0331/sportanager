@@ -13,7 +13,7 @@ $check_result = mysqli_fetch_array($check_query);
 
 if ($check_result) {
 	//아이디가 존재하면 다음으로 진행
-	if ($check_result['m_pw'] == $m_pw) {
+	if (password_verify($m_pw, $check_result['m_pw'])) {
 		//비밀번호까지 일치 하면
 		//세션으로 아이디와 비밀번호를 넘겨줌
 		session_start();

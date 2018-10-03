@@ -44,7 +44,7 @@ $conn = getConnection();
 // }
 
 $m_id = $_REQUEST['m_id'];
-$m_pw = $_REQUEST['m_pw'];
+$m_pw = password_hash($_REQUEST['m_pw'], PASSWORD_DEFAULT);
 $m_name = $_REQUEST['m_name'];
 $m_tname = $_REQUEST['m_tname'];
 // $m_image = $_REQUEST['profile_image'];
