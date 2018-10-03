@@ -100,8 +100,8 @@ d
     </div>
     <div class="page1_article">
       <div class="nav">
-        <div class="nav_team_logo_box">
-          <img src="<?php echo $info_array['m_image']; ?>">
+        <div class="nav_team_logo_box" style="background-image:url(<?php echo $info_array['m_image']; ?>)!important;"id="phpteamlogo">
+          <!-- <img src="<?php echo $info_array['m_image']; ?>"> -->
         </div>
         <p>WELCOME</p>
         <h1>TEAM NAME(php처리)</h1>
@@ -142,8 +142,7 @@ d
         <div class="my_team_box">
           <div class="my_team_logo">
             <p>TEAM NAME[PHP처리]</p>
-            <div class="my_logo">
-              TEMA_LOGO[php처리 ]
+            <div class="my_logo" style="background-image:url(<?php echo $info_array['m_image']; ?>)!important;" id="phpteamlogo">
             </div>
           </div>
           <div class="my_team_member">

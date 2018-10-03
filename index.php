@@ -25,70 +25,13 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
   <title></title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src='//code.jquery.com/jquery.min.js'></script>
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js'></script>
   <script src="js/event.js"></script>
   <script src="js/post_check.js"></script>
-<!--   <script>
-    $(function() {
-      $('#m_image').bind('change', function() {
-        $("<form action='upload_ok.php' enctype='multipart/form-data' method='post'/>")
-        .ajaxForm({
-          dataType: 'json',
-          beforeSend: function() {
-            $('#result').append( "beforeSend...\n" );
-          },
-          complete: function(data) {
-            $('#result')
-            .append( "complete...\n" )
-            .append( JSON.stringify( data.responseJSON ) + "\n" );
-          }
-        })
-        .append( $(this) )
-        .submit();
-      });
-    });
-  </script>
--->
-<!-- <script type="text/javascript">  
-  $(document).ready(function() {
-
-    $("#m_image").submit( function(e){
-      e.preventDefault();
-
-      var datas, xhr;
-
-      datas = new FormData();
-      datas.append( 'service_image', $( '#profile_image' )[0].files[0] );
-
-      $.ajax({
-            url: someurl, // url where upload the image
-            contentType: 'multipart/form-data',
-            type: 'POST',
-            data: datas,  
-            dataType: 'json',    
-            mimeType: 'multipart/form-data',
-            success: function (data) {              
-             alert( data.url );               
-           },
-           error : function (jqXHR, textStatus, errorThrown) {
-            alert('ERRORS: ' + textStatus);
-          },
-          cache: false,
-          contentType: false,
-          processData: false
-        });        
-    });
-
-  });
-
-</script>
--->
 <!-- 메모장CSS 완성시 삭제바람 -->
 <style media="screen">
 .memo{
   width: 500px;
-  height: 200px;
+  height: 500px;
   background-color: rgba(255,255,255,0.4);
   position: absolute;
   left: 10px;
@@ -100,16 +43,23 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
 
 <body>
   <div class="wrap">
-
+    <!-- 메모장영역 완성시 삭제바람 -->
+    <!-- 메모장영역 완성시 삭제바람 -->
+    <!-- 메모장영역 완성시 삭제바람 -->
+    <!-- 메모장영역 완성시 삭제바람 -->
     <!-- 메모장영역 완성시 삭제바람 -->
 
     <div class="memo">
       <h1>메모장입니다</h1>
+       <b>*****클릭하면사라짐******</b>
+      <p><b>진행사항</b></p>
+      로그인 로그아웃 UI / 시스템 완성(10/01)</br>
+      회원가입 폼 제작중 (10/02 -) (팀이름도추가해주세여! - input은 만들어둠)</br></br>
+      테스트 계정</br>
+      <b>계정:admin / 패스워드 :admin</b></br>
+      로그인 로그아웃 UI / 시스템 완성(10/01)</br>
+      회원가입 폼 제작중 (10/02 -) (팀이름도추가해주세여! - input은 만들어둠)
 
-    테스트 계정</br>
-  계정:admin / 패스워드 :admin</br>
-진행사항 : 로그인 로그아웃 UI / 시스템 완성(10/01)</br>
-<b>*****클릭하면사라짐******</b>
 
 
 </div>
@@ -119,6 +69,11 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
   })
 </script>
 <!-- 메모장영역 완성시 삭제바람 -->
+<!-- 메모장영역 완성시 삭제바람 -->
+<!-- 메모장영역 완성시 삭제바람 -->
+<!-- 메모장영역 완성시 삭제바람 -->
+<!-- 메모장영역 완성시 삭제바람 -->
+
 
 
 <section class="intor_section">
@@ -195,8 +150,8 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
 
 
           <form class="login_form" action="login_proc.php" method="get">
-            <input type="text" name="m_id" placeholder="ID" autocomplete="off" class="login_input"></br>
-            <input type="password" name="m_pw" placeholder="PW" autocomplete="off" class="password_input">
+            <input type="text" name="m_id" placeholder="ID" autocomplete="off" class="login_input" required></br>
+            <input type="password" name="m_pw" placeholder="PW" autocomplete="off" class="password_input" required>
             <button type="submit" name="button" value="로그인" class="form_login_btn">로그인</button>
             <div class="login_box_close">닫기</div>
           </form>
@@ -205,17 +160,28 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
 
       </div>
       <div class="select_join">
-        <div class="login_mark_people"></div>
 
-        <form class="logout_form" enctype="multipart/form-data" action="regi_proc.php" method="post" onSubmit="return post_check();">
-          <input type="text" name='m_id' placeholder="ID" autocomplete="off" class="login_input"><br>
-          <input type="password" name="m_pw" placeholder="PW" autocomplete="off" class="password_input"><br>
-          <input type="password" name="m_pwre" placeholder="PW_repeat" autocomplete="off" class="password_input"><br>
-          <input type="text" name="m_name" placeholder="NAME" autocomplete="off" class="password_input"><br>
-          <input type="file" name="m_image">
-          <button type="submit" name="button" value="회원가입" class="form_login_btn">회원가입</button>
-          <div class="login_box_close">닫기</div>
+        <!-- 회원가입폼 -->
+
+        <form class="join_form" enctype="multipart/form-data" name="wform`" action="regi_proc.php" method="post" onsubmit="return post_check()">
+          <h1>SIGN UP</h1>
+          <p>ID</p>
+          <input type="text" name='m_id' placeholder="ID" autocomplete="off" id="join_id" class="join_inset" required>
+          <p>PASSWORD</p>
+          <input type="password" name="m_pw" placeholder="PW" autocomplete="off" id="join_password" class="join_inset" required>
+          <p>Retry_password</p>
+          <input type="password" name="m_pwre" placeholder="PW_repeat" autocomplete="off" id="join_password" class="join_inset" required>
+          <p>NAME</p>
+          <input type="text" name="m_name" placeholder="NAME" autocomplete="off" id="join_name" class="join_inset" required>
+          <p>TEAM NAME</p>
+          <input type="text" name="m_tname" placeholder="NAME" autocomplete="off" id="join_teamname" class="join_inset" required>
+
+          <!-- <input type="file" name="m_image" id="upload_img"> -->
+
+          <input type="submit" name="button" value="회원가입" id="form_join_btn">
+
         </form>
+        <div class="login_box_close">닫기</div>
 
       </div>
 
@@ -225,9 +191,10 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
 
 </section>
 <div class="login_btn">
-  <?php 
+  <?php
   if ($login_check == true) {
-    echo "<marquee>Logged In [".$m_id."]</marquee>";//장난으로 마퀴태그 써봄 ㅋㅋㅋㅋ 한줄로 그냥 쓰면 아랫줄로 넘어가버림
+    echo "$m_id";
+    //장난으로 마퀴태그 써봄 ㅋㅋㅋㅋ 한줄로 그냥 쓰면 아랫줄로 넘어가버림
   }else{
     echo "Log In";
   }
