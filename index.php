@@ -67,7 +67,8 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
     로그인 로그아웃 UI / 시스템 완성(10/01)</br>
   회원가입 폼 제작중 (10/02 -) (팀이름도추가해주세여! - input은 만들어둠)</br></br>
 테스트 계정</br>
-<b>계정:admin / 패스워드 :admin</b></br>
+<b>계정:eofla12 / 패스워드 :eofla12!</b></br>
+회원가입 가능합니다</br>
 로그인 로그아웃 UI / 시스템 완성(10/01)</br>
 회원가입 폼 제작중 (10/02 -) (팀이름도추가해주세여! - input은 만들어둠)
 
@@ -96,7 +97,7 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
 
         <a href="team.php">
           <div class="box1_img">
-            <img src="img/cart.png" alt="">
+            <img src="img/support.png" alt="">
           </div>
         </a>
 
@@ -109,7 +110,7 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
 
         <a href="player.php">
           <div class="box2_img">
-            <img src="img/people.png" alt="">
+            <img src="img/avatar.png" alt="">
           </div>
         </a>
 
@@ -121,7 +122,7 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
 
         <a href="league.php">
           <div class="box3_img">
-            <img src="img/zoom.png" alt="">
+            <img src="img/trophy.png" alt="">
           </div>
         </a>
         <div class="box3_text">
@@ -194,7 +195,7 @@ if (isset($_SESSION['m_id']) || isset($_SESSION['m_pw'])) {
           <p>TEAM NAME</p>
           <input type="text" name="m_tname" placeholder="NAME" autocomplete="off" id="join_teamname" class="join_inset" required>
 
-          <!-- <input type="file" name="m_image" id="upload_img"> -->
+          <input type="file" size=2048 name="m_image" id="upload_img">
 
           <input type="submit" name="button" value="회원가입" id="form_join_btn">
 
