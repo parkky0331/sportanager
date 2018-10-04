@@ -1,3 +1,11 @@
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 2.=index_page_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 4.=page1.css= /===================================*/
+/*============영역 바로가기 5.=page2.css= /===================================*/
+/*============영역 바로가기 6.=page3css= /===================================*/
+/*============영역 바로가기 7.=미디어쿼리(테블릿)= /===================================*/
+/*============영역 바로가기 8.=미디어쿼리(모바일)= /===================================*/
 html, body {
   margin: 0px;
   padding: 0px;
@@ -9,8 +17,13 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/*intro page css*/
-
+/*============영역 바로가기 2.=index_page_css= /===================================*/
+/*============영역 바로가기 2.=index_page_css= /===================================*/
+/*============영역 바로가기 2.=index_page_css= /===================================*/
+/*============영역 바로가기 2.=index_page_css= /===================================*/
+/*============영역 바로가기 2.=index_page_css= /===================================*/
+/*============영역 바로가기 2.=index_page_css= /===================================*/
+/*============영역 바로가기 2.=index_page_css= /===================================*/
 .intor_section {
   min-width: 1280px;
   width: 100%;
@@ -29,20 +42,23 @@ body::-webkit-scrollbar {
 }
 
 /*intro background-img animation*/
-
 @keyframes ani1 {
   0% {
     background-position: left top;
   }
+
   25% {
     background-position: center;
   }
+
   50% {
     background-position: right bottom;
   }
+
   75% {
     background-position: center;
   }
+
   100% {
     background-position: left top;
   }
@@ -69,21 +85,24 @@ body::-webkit-scrollbar {
   height: 35vh;
   margin-top: 10%;
   display: inline-block;
-  position: absolute;
   margin-right: 10px;
   margin-left: 10px;
   overflow: hidden;
   background-color: rgba(245, 29, 68, 0.6);
 }
-.index_box1{
-  left: 5%;
+
+.index_box1 {
+  left: 10%;
 }
-.index_box2{
-  left: 37.5%;
+
+.index_box2 {
+  left: 37%;
 }
-.index_box3{
-  right: 5%;
+
+.index_box3 {
+  right: 10%;
 }
+
 .box1_img, .box2_img, .box3_img {
   width: 100%;
   height: 100%;
@@ -94,7 +113,6 @@ body::-webkit-scrollbar {
 .index_box1:hover .box1_img {
   height: 120px;
   margin-top: 50px;
-
 }
 
 .index_box2:hover .box2_img {
@@ -106,7 +124,6 @@ body::-webkit-scrollbar {
   height: 120px;
   margin-top: 50px;
 }
-
 
 .box1_img img, .box2_img img, .box3_img img {
   position: relative;
@@ -121,42 +138,257 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
 }
 
-/*login_sys*/
-
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
 .login_btn {
   width: 120px;
-  height: 50px;
-  background-color: rgba(128, 187, 40, 0.6);
   z-index: 999;
+  background-color: rgba(23, 42, 126, 0.3);
+  height: 50px;
   position: absolute;
   top: 30px;
   right: 100px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login_btn:hover {
+  background-color: rgba(23, 42, 126, 0.9);
 }
 
 .login_box {
-  width: 90%;
+  width: 30%;
   height: 80vh;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.9);
   position: fixed;
   left: 50%;
   top: 10%;
   transform: translateX(-50%);
+  border-radius: 15px;
+  box-shadow: 0px 0px 100px 3px rgb(125, 125, 125);
+  border: 3px solid lightgray;
   display: none;
 }
 
-.login_box_close {
-  width: 70px;
-  height: 30px;
-  background-color: rgba(255, 255, 255, 0.6);
+.login_selector {
+  width: 70%;
+  height: 50px;
+  margin: 0px auto;
+  font-weight: bold;
 }
 
-/*login_sys*/
+.login_selector p {
+  width: 25%;
+  height: 90%;
+  line-height: 50px;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  cursor: pointer;
+}
 
+.login_selector p:nth-child(1) {
+  border-bottom: 3px solid #1b2d43;
+  box-sizing: border-box;
+}
+
+.select_join {
+  width: 100%;
+  height: 80%;
+  margin-top: 10%;
+  display: none;
+}
+
+.select_join h1 {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.login_mark_people {
+  width: 150px;
+  height: 150px;
+  margin: 0px auto;
+  margin-top: 15%;
+  background-image: url(../img/group.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*===========login_form===================================*/
+.login_form {
+  width: 80%;
+  height: 150px;
+  margin: 0px auto;
+  margin-top: 40px;
+}
+
+.login_input {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  border: none;
+  background-color: lightgray;
+}
+
+.password_input {
+  width: 100%;
+  margin-top: 10px;
+  height: 30px;
+  text-align: center;
+  border: none;
+  background-color: lightgray;
+}
+
+.form_login_btn {
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 20px;
+  ;
+  height: 30px;
+  background-color: #1b2d43;
+  border: none;
+  color: white;
+  font-size: 0.8rem;
+}
+
+/*===========login_form===================================*/
+/*===========join_form===================================*/
+.join_form {
+  width: 85%;
+  height: 85%;
+  margin: 30px auto;
+  overflow-y: scroll;
+  scrollbar: none;
+}
+
+.join_form::-webkit-scrollbar {
+  display: none;
+}
+
+.join_form h1 {
+  margin: 0px;
+  font-weight: bold;
+}
+
+.join_form p {
+  margin: 2.5% auto;
+  font-size: 0.8rem;
+  padding: 10px;
+}
+
+.join_inset {
+  width: 90%;
+  height: 30px;
+  background-color: lightgray;
+  border: none;
+  padding-left: 10px;
+}
+
+#form_join_btn {
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 1%;
+  height: 30px;
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+#upload_img {
+  margin-top: 20px;
+}
+
+#join_id {
+  width: 70%;
+  display: inline-block;
+  float: left;
+}
+
+#idcheck {
+  width: 17%;
+  display: inline-block;
+  border: none;
+  margin-left: 3%;
+  background-color: red;
+  font-size: 0.6rem;
+  color: white;
+  height: 30px;
+  text-align: center;
+}
+
+/*===========join_form===================================*/
+.login_box_close {
+  width: 70%;
+  margin: 0px auto;
+  margin-top: 15px;
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+  background-color: #1b2d43;
+  border: none;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.logout p {
+  width: 100%;
+  height: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.logout_yes {
+  width: 60%;
+  height: 30px;
+  display: block;
+  margin-left: 20%;
+  background-color: #1b2d43;
+  border: none;
+}
+
+.logout_yes a {
+  color: white;
+  text-decoration: none;
+}
+
+.logout .login_box_close {
+  width: 60%;
+  height: 30px;
+  display: block;
+}
+
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
+/*============영역 바로가기 1.=login_sys= /===================================*/
 /*intro page css*/
-
-/*page1,2,3 공통 css*/
-
-.page1_wrap,.page2_wrap,.page3.wrap {
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+.page1_wrap, .page2_wrap, .page3.wrap {
   background-color: #e6e9ec;
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
@@ -234,13 +466,19 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
 }
 
+#phpteamlogo {
+  background-size: 100% !important;
+  background-repeat: no-repeat !important;
+}
+
 .nav_team_logo_box {
   width: 70%;
   margin: 50px auto;
   max-width: 160px;
   height: 160px;
-  background-color: white;
   border-radius: 150px;
+  background: rgb(70, 70, 70);
+  background-position: center;
 }
 
 .nav p {
@@ -312,8 +550,52 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
 }
 
-/*====page1 css=======*/
+.logout_box {
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  display: none;
+}
 
+.logout_team_logo {
+  width: 150px;
+  height: 70%;
+  background-color: gray;
+  float: left;
+}
+
+.logout_team_info {
+  width: calc(100% - 150px);
+  height: 70%;
+  background-color: green;
+  float: left;
+}
+
+.logout_logout {
+  width: 100%;
+  height: 30%;
+  float: left;
+}
+
+.logout_logout div {
+  width: 50%;
+  height: 50%;
+  background-color: gray;
+  float: left;
+}
+
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 3.=nav & page1,2,3공통_css= /===================================*/
+/*============영역 바로가기 4.=page1.css= /===================================*/
+/*============영역 바로가기 4.=page1.css= /===================================*/
+/*============영역 바로가기 4.=page1.css= /===================================*/
+/*============영역 바로가기 4.=page1.css= /===================================*/
 .my_team_box {
   width: 95%;
   height: 45vh;
@@ -340,7 +622,8 @@ body::-webkit-scrollbar {
 
 .my_logo {
   width: 80%;
-  height: 50%;
+  height: 70%;
+  max-height: 400px;
   margin: 5% auto;
   background-color: #e6eaed;
 }
@@ -370,7 +653,6 @@ body::-webkit-scrollbar {
 
 .member_input {
   width: 25%;
-  height: 80%;
   height: 25px;
   border: 2px solid gray;
   float: right;
@@ -383,7 +665,6 @@ body::-webkit-scrollbar {
   width: 70%;
   border: none;
   height: 66%;
-
   float: left;
   margin-top: 2%;
 }
@@ -391,24 +672,21 @@ body::-webkit-scrollbar {
 .member_pluse {
   width: 15%;
   height: 20px;
-  float: left;
+  float: right;
   text-align: center;
   font-size: 1.6rem;
-
-
 }
 
 .member_find {
   width: 15%;
-  height: 100%;
   height: 25%;
-  margin-top: 1.4%;
   float: left;
+  -ms-position: relative;
   text-align: center;
 }
 
 .member_find input {
-  height: 15px;
+  height: 20px;
   background-image: url(../img/find.png);
   background-color: white;
   background-repeat: no-repeat;
@@ -452,8 +730,15 @@ body::-webkit-scrollbar {
   color: white;
 }
 
-/*==============page2 css=============================*/
-
+/*============영역 바로가기 4.=page1.css= /===================================*/
+/*============영역 바로가기 4.=page1.css= /===================================*/
+/*============영역 바로가기 4.=page1.css= /===================================*/
+/*============영역 바로가기 4.=page1.css= /===================================*/
+/*============영역 바로가기 5.=page2.css= /===================================*/
+/*============영역 바로가기 5.=page2.css= /===================================*/
+/*============영역 바로가기 5.=page2.css= /===================================*/
+/*============영역 바로가기 5.=page2.css= /===================================*/
+/*============영역 바로가기 5.=page2.css= /===================================*/
 .my_member_box {
   width: 95%;
   height: 350px;
@@ -517,7 +802,6 @@ body::-webkit-scrollbar {
   border: 2px solid #415063;
   box-sizing: border-box;
   margin-right: 2%;
-
   float: left;
   /*여기지워야뎀*/
   text-align: center;
@@ -596,18 +880,17 @@ body::-webkit-scrollbar {
   border-bottom: 1px solid #336666;
   font-size: 1.2rem;
 }
-.record_table{
 
+.record_table {
   width: 95%;
   height: 270px;
   margin: 0px auto;
   box-sizing: border-box;
   border: 1px solid #336666;
   overflow: hidden;
-
-
 }
-.record_table h1{
+
+.record_table h1 {
   width: 100%;
   height: 30px;
   color: white;
@@ -617,28 +900,27 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
   background-color: #415063;
 }
-.record_ul{
 
+.record_ul {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
 }
-.record_table ul{
+
+.record_table ul {
   width: 25%;
   height: 100%;
   display: block;
   float: left;
 }
-.record_table ul li{
+
+.record_table ul li {
   width: 100%;
   height: 20%;
   border: 0.4px solid #336666;
   line-height: 40px;
-
   box-sizing: border-box;
-
 }
-
 
 .member_chart {
   width: 95%;
@@ -658,15 +940,28 @@ body::-webkit-scrollbar {
   color: white;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 770px) {
+/*============영역 바로가기 5.=page2.css= /===================================*/
+/*============영역 바로가기 5.=page2.css= /===================================*/
+/*============영역 바로가기 5.=page2.css= /===================================*/
+/*============영역 바로가기 5.=page2.css= /===================================*/
+/*============영역 바로가기 5.=page2.css= /===================================*/
+/*============영역 바로가기 7.=미디어쿼리(테블릿)= /===================================*/
+/*============영역 바로가기 7.=미디어쿼리(테블릿)= /===================================*/
+/*============영역 바로가기 7.=미디어쿼리(테블릿)= /===================================*/
+/*============영역 바로가기 7.=미디어쿼리(테블릿)= /===================================*/
+/*============영역 바로가기 7.=미디어쿼리(테블릿)= /===================================*/
+/*============영역 바로가기 7.=미디어쿼리(테블릿)= /===================================*/
+@media screen and (max-width: 1000px) and (min-width: 770px) {
 
   /*intro page css*/
   .section_wrap {}
+
   .intor_section {
     min-width: 770px;
     animation: ani1 15s linear infinite normal;
     background-size: cover;
   }
+
   .sitelogo {
     margin-top: 10%;
   }
@@ -674,50 +969,54 @@ body::-webkit-scrollbar {
   .boxs {
     max-width: 900px;
   }
+
   .index_box1, .index_box2, .index_box3 {
     width: 28%;
     height: 25vh;
     margin-top: 10%;
     background-color: rgba(198, 255, 220, 0.6);
   }
-  .index_box1{
+
+  .index_box1 {
     left: 4%;
   }
-  .index_box2{
+
+  .index_box2 {
     left: 35%;
   }
-  .index_box3{
+
+  .index_box3 {
     right: 4%;
   }
+
   .box1_img, .box2_img, .box3_img {}
+
   .index_box1:hover .box1_img {
     margin-top: 25px;
     pointer-events: none;
   }
+
   .index_box2:hover .box2_img {
     margin-top: 25px;
     pointer-events: none;
   }
+
   .index_box3:hover .box3_img {
     margin-top: 25px;
     pointer-events: none;
   }
+
   .login_btn {
     right: 20px;
   }
+
   .login_box {
-    width: 500px;
-    height: 70vh;
-    background-color: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    left: 50%;
-    top: 15%;
-    transform: translateX(-50%);
-    display: none;
+    width: 60%;
+    min-height: 80%;
   }
+
   .box1_text, .box2_text, .box3_text {
     display: none;
-
   }
 
   /*intro page css*/
@@ -729,9 +1028,11 @@ body::-webkit-scrollbar {
   .head_logo {
     margin-left: 10%;
   }
-  .head_login{
-    display:none;
+
+  .head_login {
+    display: none;
   }
+
   .nav {
     height: 100%;
     min-height: 1200px;
@@ -740,10 +1041,10 @@ body::-webkit-scrollbar {
   }
 
   /*page1 css*/
-
-  .page1_wrap{
+  .page1_wrap {
     min-width: 900px;
   }
+
   .my_team_logo {
     width: 30%;
   }
@@ -772,10 +1073,8 @@ body::-webkit-scrollbar {
   }
 
   .member_input {
-    width:30%;
+    width: 30%;
   }
-
-
 
   .my_team_member ul {
     width: 95%;
@@ -784,37 +1083,25 @@ body::-webkit-scrollbar {
     overflow-y: scroll;
   }
 
-
-
   .my_team_member ul li span {
     margin-right: 9%;
   }
 
-
   /*page2 css*/
-  .page2_wrap{
+  .page2_wrap {
     min-width: 1000px;
   }
 
-
   .member_is span {
-
     font-size: 0.8rem;
-
   }
 
-
-
   .member_is ul li {
-
     font-size: 0.7rem;
   }
 
   .member_is ul li p:nth-child(1) {
-
-
     font-size: 0.7rem;
-
   }
 
   .member_is ul li p:nth-child(2) {
@@ -825,7 +1112,15 @@ body::-webkit-scrollbar {
   /*page3 css*/
 }
 
-@media screen and (max-width: 780px) {
+/*============영역 바로가기 8.=미디어쿼리(모바일)= /===================================*/
+/*============영역 바로가기 8.=미디어쿼리(모바일)= /===================================*/
+/*============영역 바로가기 8.=미디어쿼리(모바일)= /===================================*/
+/*============영역 바로가기 8.=미디어쿼리(모바일)= /===================================*/
+/*============영역 바로가기 8.=미디어쿼리(모바일)= /===================================*/
+/*============영역 바로가기 8.=미디어쿼리(모바일)= /===================================*/
+/*============영역 바로가기 8.=미디어쿼리(모바일)= /===================================*/
+@media screen and (max-width: 770px) {
+
   /*intro page css*/
   .intor_section {
     min-width: 320px;
@@ -836,37 +1131,51 @@ body::-webkit-scrollbar {
     background-position: bottom;
     background-color: gray;
   }
+
   .sitelogo {
     width: 70%;
     margin-top: 15%;
   }
+
   .boxs {
     min-width: 320px;
   }
-  .index_box1, .index_box2, .index_box3 {
-    width: 85%;
-    max-width: 400px;
 
+  .index_box1, .index_box2, .index_box3 {
+    margin: 20px auto;
+    width: 90%;
     height: 100px;
-    margin-top: 15px;
-    background-color: rgba(198, 255, 220, 0.6);
+    display: block;
+  }
+
+  .index_box1:hover .box1_img {
+    margin-top: 5px;
+    pointer-events: none;
+  }
+
+  .index_box2:hover .box2_img {
+    margin-top: 5px;
+    pointer-events: none;
+  }
+
+  .index_box3:hover .box3_img {
+    margin-top: 5px;
+    pointer-events: none;
   }
 
   .login_btn {
-    width: 100px;
-    height: 40px;
-    right: 40px;
+    width: 80px;
+    height: 30px;
+    right: 25px;
+    line-height: 30px;
   }
+
   .login_box {
-    width: 90%;
-    height: 80vh;
-    background-color: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    left: 50%;
-    top: 10%;
-    transform: translateX(-50%);
-    display: none;
+    width: 80%;
+    min-height: 500px;
+    transform: translateX(-53%);
   }
+
   /*intro page css*/
   /*page1,2,3 공통 css*/
   .head_logo {
@@ -879,24 +1188,29 @@ body::-webkit-scrollbar {
     background-position: center;
     margin-left: 10%;
   }
+
   .hamber:nth-child(1) {
     display: block;
   }
+
   .nav {
     height: 100%;
     min-height: 1800px;
     position: absolute;
     left: -230px;
   }
+
   .head_login {
     display: none;
   }
+
   /*page1 css*/
   .my_team_box {
     width: 100%;
     height: 100%;
     margin: 1.5% auto;
   }
+
   .my_team_logo {
     width: 90%;
     height: 400px;
@@ -906,6 +1220,7 @@ body::-webkit-scrollbar {
     background-color: white;
     float: none;
   }
+
   .my_team_member {
     width: 90%;
     height: 500px;
@@ -915,28 +1230,34 @@ body::-webkit-scrollbar {
     background-color: white;
     float: none;
   }
+
   .my_team_member li span {
     margin-right: 5px;
     font-size: 0.8rem;
   }
+
   .my_team_member li span:nth-child(4) {
     display: none;
   }
+
   .my_team_date {
     width: 90%;
     height: 500px;
     margin: 1.5% auto;
     background-color: white;
   }
+
   .member_tit {
     padding-bottom: 30px;
   }
+
   .member_tit p {
     width: 40%;
     float: left;
     font-size: 1.3rem;
     padding-left: 10px;
   }
+
   .member_input {
     width: 45%;
     height: 80%;
@@ -946,6 +1267,7 @@ body::-webkit-scrollbar {
     margin-right: 20px;
     line-height: 28px;
   }
+
   .member_input input {
     width: 70%;
     border: none;
@@ -953,6 +1275,7 @@ body::-webkit-scrollbar {
     float: left;
     margin-top: 2%;
   }
+
   .member_pluse {
     width: 15%;
     height: 100%;
@@ -960,6 +1283,7 @@ body::-webkit-scrollbar {
     text-align: center;
     font-size: 1.6rem;
   }
+
   .member_find {
     width: 15%;
     height: 100%;
@@ -967,21 +1291,20 @@ body::-webkit-scrollbar {
     float: left;
     text-align: center;
   }
+
   .member_find input {
     background-image: url(../img/find.png);
     background-color: white;
   }
+
   /*page2 css*/
-  .page2_wrap{
+  .page2_wrap {
     height: 800px;
   }
 
   .my_member_box {
-
     height: 100%;
-
   }
-
 
   .member_info {
     width: 95%;
@@ -994,11 +1317,8 @@ body::-webkit-scrollbar {
     padding-top: 20px;
   }
 
-
   .member_is span {
-
     font-size: 0.8rem;
-
   }
 
   .member_is h1 span:nth-child(1) {
@@ -1006,10 +1326,8 @@ body::-webkit-scrollbar {
   }
 
   .member_is ul li {
-
     font-size: 0.7rem;
   }
-
 
   .member_table {
     width: 95%;
@@ -1021,35 +1339,32 @@ body::-webkit-scrollbar {
   .member_table_tit {
     width: 95%;
     padding-top: 20px;
-
   }
-  .record_table{
 
+  .record_table {
     width: 95%;
     height: 350px;
     margin: 0px auto;
   }
-  .record_table ul{
+
+  .record_table ul {
     width: 100%;
     height: 100%;
     display: block;
     float: none;
     margin-bottom: 17px;
-
   }
-  .record_table ul li{
+
+  .record_table ul li {
     width: 100%;
     height: 15%;
   }
 
-
   .member_chart {
     width: 90%;
-    margin:20px auto;
+    margin: 20px auto;
     height: 400px;
-
   }
-
 
   /*page3 css*/
 }

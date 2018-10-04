@@ -13,7 +13,7 @@ $check_result = mysqli_fetch_array($check_query);
 
 if ($check_result) {
 	//아이디가 존재하면 다음으로 진행
-	if ($check_result['m_pw'] == $m_pw) {
+	if (password_verify($m_pw, $check_result['m_pw'])) {
 		//비밀번호까지 일치 하면
 		//세션으로 아이디와 비밀번호를 넘겨줌
 		session_start();
@@ -21,12 +21,22 @@ if ($check_result) {
 		$_SESSION['m_pw'] = $m_pw;
 
 
-		echo "
+		// echo "
+		// <script type='text/javascript'>
+		// alert('$m_id님 어서오세요!');
+		// location.href = 'index.php';
+		// </script>
+		// ";
+
+		?>
+
 		<script type='text/javascript'>
-		alert('로그인성공.');
+		alert('<?php echo($m_id.'님 어서오세요!') ?>');
 		location.href = 'index.php';
 		</script>
-		";
+
+
+		<?php
 
 	}else{
 		//비밀번호가 일치하지 않다면
