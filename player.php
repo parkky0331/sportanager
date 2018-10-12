@@ -1,21 +1,32 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/conn.inc";
 
+$conn = getConnection();
 session_start();
-
 
 $m_id = $_SESSION['m_id'];
 if (!$m_id) {
 
-    echo "
-    <script type='text/javascript'>
-    alert('로그인이 필요한 서비스 입니다.');
-    location.href = 'index.php';
-    </script>";
+  echo "
+  <script type='text/javascript'>
+  alert('로그인이 필요한 서비스 입니다.');
+  location.href = 'index.php';
+  </script>";
 
 }
 
+$info_sql = "SELECT * FROM member_tb WHERE m_id = '$m_id'";
+$info_query = mysqli_query($conn, $info_sql);
+$info_array = mysqli_fetch_array($info_query);
 
- ?>
+$p_name = $_REQUEST['searchPlayer'];
+
+$pDetail_sql = "select * from player_tb where p_name = '$p_name'";
+$pDetail_query = mysqli_query($conn, $pDetail_sql);
+$pDetial_array = mysqli_fetch_array($pDetail_query);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -27,6 +38,23 @@ if (!$m_id) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">
   <script src="js/event.js"></script>
+  <script>
+    //선수검색 팝업
+    function searchPlayer(){
+      var s_player = document.getElementById("member_finder").value;
+      if(s_player)
+      {
+        url = "search_player.php?s_player="+s_player;
+        window.open(url,"선수검색","width=500,height=800");
+      }else{
+        alert("선수이름을 입력하세요");
+      }
+    }
+  </script>
+  <script>
+    //팝업창 제어용
+    window.name = "player";
+  </script>
   <title></title>
 </head>
 
@@ -56,13 +84,48 @@ if (!$m_id) {
         <?php echo $_SESSION['m_id']; ?>
       </div>
 
+      <div class="logout_box" style="display: none">
+        <div class="logout_team_logo">
+
+        </div>
+        <div class="logout_team_info">
+          <h1><?php echo $_SESSION['m_id']; ?></h1>
+          <p>팀대표자 : <?php echo $_SESSION['m_id']; ?> </p>
+
+        </div>
+
+        <div class="logout_logout">
+
+          로그아웃하시겠습니까?
+          <div class="logout_logout_yes">
+            yes
+          </div>
+          <div class="logout_logout_no">
+            no
+          </div>
+        </div>
+        <script type="text/javascript">
+          $(".head_login").click(function(){
+            $(".logout_box").show()
+          })
+          $(".logout_logout_no").click(function(){
+            $(".logout_box").css({"display":"none"})
+
+          })
+
+        </script>
+
+
+
+
+      </div>
     </div>
     <div class="page1_article">
       <div class="nav">
-        <div class="nav_team_logo_box">
+        <div class="nav_team_logo_box" style="background-image:url(<?php echo $info_array['m_image']; ?>)!important;"id="phpteamlogo">
         </div>
         <p>WELCOME</p>
-        <h1>TEAM NAME(php처리)</h1>
+        <h1><?php echo $info_array['m_tname']; ?></h1>
         <div class="menu_list">
           <ul class="high_list">
             <h2>MENU</h2>
@@ -130,9 +193,9 @@ if (!$m_id) {
             <div class="member_member_find">
 
               <!--검색하면 정보가 검색한사람 정보로 바뀌어야뎀-->
-              <form class="" action="index.html" method="post">
-                <input type="text" name="" value="" id="member_finder" placeholder="선수검색">
-                <input type="button" name="" value="" id="member_finder_btn">
+              <form class="">
+                <input type="text" name="s_player" value="" id="member_finder" placeholder="선수검색">
+                <input type="button" name="submit" value="" onclick="searchPlayer();" id="member_finder_btn">
               </form>
             </div>
 
@@ -142,44 +205,48 @@ if (!$m_id) {
                 <img src="img/people.png" alt="">
 
               </div>
-              <div class="member_is">
-                <h1><span>001</span><span>김다운</span></h1>
+              <?php 
+              echo "
+              <div class='member_is'>
+                <h1><span>".$pDetial_array['p_backnum']."</span><span>".$pDetial_array['p_name']."</span></h1>
+                <!--php 정보 처리-->
                 <ul>
-                  <!--php 정보 처리-->
                   <li>
                     <p>보직</p>
-                    <p>투수</p>
+                    <p>".$pDetial_array['p_pos']."</p>
                   </li>
                   <li>
                     <p>생년월일</p>
-                    <p>930408</p>
+                    <p>".$pDetial_array['p_birth']."</p>
                   </li>
                   <li>
                     <p>가입연월</p>
-                    <p>201809</p>
+                    <p>".$pDetial_array['p_regidate']."</p>
                   </li>
                   <li>
                     <p>연락처</p>
-                    <p>010-0000-0000</p>
+                    <p>".$pDetial_array['p_tel']."</p>
                   </li>
                   <li>
                     <p>주소</p>
-                    <p>안양시 비산동</p>
+                    <p>".$pDetial_array['p_addr1']."</p>
                   </li>
                   <li>
                     <p>상세주소</p>
-                    <p>대림대학교 모바일 109호</p>
+                    <p>".$pDetial_array['p_addr2']."</p>
                   </li>
                   <li>
                     <p>메신져</p>
-                    <p>moin2018</p>
+                    <p>".$pDetial_array['p_sns']."</p>
                   </li>
 
                 </ul>
 
-              </div>
-
+              </div>";
+              ?>
             </div>
+
+
 
           </div>
 
@@ -191,48 +258,48 @@ if (!$m_id) {
               <h1>경기기록</h1>
               <div class="record_ul">
 
-              <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>5</li>
-                <li>5</li>
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>5</li>
+                  <li>5</li>
 
 
-              </ul>
-              <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>5</li>
-                <li>5</li>
+                </ul>
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>5</li>
+                  <li>5</li>
 
-              </ul>
-              <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>5</li>
-                <li>5</li>
+                </ul>
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>5</li>
+                  <li>5</li>
 
-              </ul>
-              <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>5</li>
-                <li>5</li>
+                </ul>
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>5</li>
+                  <li>5</li>
 
-              </ul>
-            </div>
+                </ul>
+              </div>
             </div>
           </div>
 

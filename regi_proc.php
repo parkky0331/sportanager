@@ -28,7 +28,7 @@ if ($m_image) {
 	// }
 
 
-	$upload_filename = "$m_name"."_"."$m_image";
+	$upload_filename = "$m_id"."_"."$m_image";
 
 
 	if( $error != UPLOAD_ERR_OK ) {
@@ -56,6 +56,7 @@ if ($m_image) {
 	}
 
 	// $upload_filename = iconv("UTF-8", "EUC-KR", $_FILES['m_image']['name']);
+	$upload_filename = iconv("UTF-8", "EUC-KR", $upload_filename);
 	move_uploaded_file($_FILES['m_image']['tmp_name'], "$upload_dir/$upload_filename");
 
 }

@@ -18,6 +18,19 @@ if ($idcheck_result) {
  <!DOCTYPE html>
  <html>
  <head>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	 <script>
+	 $("html").keyup(function(e){
+		 if (e.keyCode==13){
+			{
+				// $("html").css({"background":"black"});
+				window.close();
+
+		 }
+	 }
+ })
+
+	 </script>
 	 <style media="screen">
 	 *{
 	 	margin: 0px;
@@ -31,7 +44,7 @@ if ($idcheck_result) {
 	 		font-weight: bold;
 			color: white;
 			text-align: center;
-			margin-top: 10%;
+			margin-top:5%;
 	 	}
 		button{
 			height: 30px;
