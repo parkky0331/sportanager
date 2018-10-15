@@ -47,7 +47,7 @@ $pDetial_array = mysqli_fetch_array($pDetail_query);
         url = "search_player.php?s_player="+s_player;
         window.open(url,"선수검색","width=500,height=800");
       }else{
-        alert("선수이름을 입력하세요");
+        alert("선수이름을 입력하세요.\n모든 선수를 검색하려면 @ALL 을 입력해주세요.");
       }
     }
   </script>

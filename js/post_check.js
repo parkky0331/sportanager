@@ -4,6 +4,7 @@ function post_check(){
  var ObjUserPassword = document.wform.m_pw;
  var ObjUserPasswordRe = document.wform.m_pwre;
  var ObjUserID = document.wform.m_id;
+ var ObjUserImage = document.wform.m_image;
 
  if(!ObjUserID.value.match(/^[a-zA-Z0-9]{6,18}$/)) {
    alert("아이디는 영문,숫자를 사용하여 6 ~ 18자 까지 입력하여 주시기 바랍니다. 영문은 대소문자를 구분합니다.");

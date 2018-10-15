@@ -27,7 +27,7 @@ if ($m_image) {
 	// 	$_FILES['m_image']['name'] = mb_convert_encoding($origin_filename.".".$file_ext, "EUC-KR");
 	// }
 
-
+	$m_image = preg_replace('/\s+/', '-', $m_image);
 	$upload_filename = "$m_id"."_"."$m_image";
 
 
